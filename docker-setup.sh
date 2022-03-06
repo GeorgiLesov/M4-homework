@@ -25,6 +25,7 @@ sudo usermod -aG docker jenkins
 sudo usermod -s /bin/bash jenkins 
 echo -e "Password1\nPassword1" | sudo passwd jenkins
 echo "jenkins ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/jenkins
+sudo chmod -R 440 /etc/sudoers.d/jenkins
 
 sudo mkdir -p /home/jenkins/M4
 sudo chown jenkins:jenkins /home/jenkins/M4
