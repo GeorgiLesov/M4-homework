@@ -29,3 +29,5 @@ sudo chmod -R 440 /etc/sudoers.d/jenkins
 
 sudo mkdir -p /home/jenkins/M4
 sudo chown jenkins:jenkins /home/jenkins/M4
+
+service jenkins restart
