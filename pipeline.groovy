@@ -9,9 +9,9 @@ pipeline
             steps 
             {
                 sh '''
-                    cd /M4
-                    if [ -d /M4/bgapp ]; then 
-                      cd /M4/bgapp
+                    cd /home/jenkins/M4
+                    if [ -d /home/jenkins/M4/bgapp ]; then 
+                      cd /home/jenkins/M4/bgapp
                       git pull https://github.com/georgilesov/bgapp.git 
                     else
                       git clone https://github.com/georgilesov/bgapp.git 
@@ -24,7 +24,7 @@ pipeline
             steps
             {
                 sh '''
-                cd /M4/bgapp
+                cd /home/jenkins/M4/bgapp
                 docker image build -t img-db -f Dockerfile.db .
                 docker image build -t img-web -f Dockerfile.web.apache .
                 '''
